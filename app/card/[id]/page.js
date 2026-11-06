@@ -7,6 +7,7 @@ import { relTime } from "@/lib/format";
 import CopyButton from "@/components/CopyButton";
 import JsonView from "@/components/JsonView";
 import CardTile from "@/components/CardTile";
+import CardImage from "@/components/CardImage";
 
 export const revalidate = 0;
 
@@ -48,9 +49,7 @@ export default function CardPage({ params }) {
 
       <div className="card-layout">
         <div className="card-visual">
-          <span className="card-frame">
-            <img src={card.url} alt={card.title} />
-          </span>
+          <CardImage src={card.url} alt={card.title} className="card-frame" loading="eager" />
           <div className="card-tags">
             <span className="tag" style={{ "--tag": r.color }}>
               tier {card.tier}
