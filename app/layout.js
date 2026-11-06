@@ -2,6 +2,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PwaRegister from "@/components/PwaRegister";
+import NavigationProgress from "@/components/NavigationProgress";
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://blitzcardz.vercel.app"),
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <PwaRegister />
+        <NavigationProgress />
         <Nav />
         <main className="main">{children}</main>
         <Footer />
