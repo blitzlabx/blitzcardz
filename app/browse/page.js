@@ -3,6 +3,7 @@
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import CardTile from "@/components/CardTile";
+import LightningLoader from "@/components/LightningLoader";
 import { TIER_ORDER } from "@/lib/rarity";
 
 function Browse() {
@@ -118,13 +119,7 @@ function Browse() {
 
       <div className="grid-tiles" ref={gridRef}>
         {loading
-          ? Array.from({ length: 12 }).map((_, i) => (
-              <div className="tile-skel" key={`sk-${i}`}>
-                <span className="tile-frame skel" />
-                <span className="skel skel-line" />
-                <span className="skel skel-line short" />
-              </div>
-            ))
+          ? <LightningLoader className="card-grid-loader" label="Loading cards" />
           : data?.data?.map((c) => <CardTile key={c.id} card={c} />)}
       </div>
 
@@ -151,7 +146,7 @@ function Browse() {
 
 export default function BrowsePage() {
   return (
-    <Suspense fallback={<div className="wrap page"><p className="dim">loading…</p></div>}>
+    <Suspense fallback={<div className="wrap page"><LightningLoader className="card-grid-loader" label="Loading cards" /></div>}>
       <Browse />
     </Suspense>
   );
