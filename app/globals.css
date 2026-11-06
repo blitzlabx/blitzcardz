@@ -1261,3 +1261,393 @@ select.input {
     font-size: 13px;
   }
 }
+
+/* Mobile layout and bottom glass navigation */
+@media (max-width: 640px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 16px;
+  }
+
+  .main {
+    min-width: 0;
+    overflow-x: clip;
+  }
+
+  .hero {
+    padding: 48px 16px 30px;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 13vw, 58px);
+  }
+
+  .hero-sub {
+    font-size: 15px;
+  }
+
+  .hero-curl {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+    min-width: 0;
+    padding: 9px 10px;
+  }
+
+  .hero-curl code {
+    min-width: 0;
+    flex: 1;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-curl .copy-btn {
+    flex: none;
+  }
+
+  .strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .strip-cell {
+    min-width: 0;
+    padding: 14px 12px;
+  }
+
+  .strip-value {
+    font-size: clamp(15px, 4.5vw, 19px);
+    overflow-wrap: anywhere;
+  }
+
+  .strip-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .section {
+    margin-top: 40px;
+  }
+
+  .section-head {
+    align-items: flex-start;
+    gap: 7px 12px;
+  }
+
+  .section-head h2 {
+    font-size: 19px;
+  }
+
+  .section-hint {
+    max-width: 100%;
+    font-size: 12px;
+  }
+
+  .grid-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 11px;
+  }
+
+  .tile,
+  .tile-meta {
+    min-width: 0;
+  }
+
+  .toolbar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .toolbar .check {
+    white-space: normal;
+  }
+
+  .tier-row {
+    gap: 6px;
+  }
+
+  .chip {
+    padding: 6px 11px;
+  }
+
+  .page {
+    min-width: 0;
+    padding-top: 30px;
+    padding-bottom: 36px;
+  }
+
+  .page-head h1 {
+    font-size: clamp(26px, 8vw, 32px);
+    overflow-wrap: anywhere;
+  }
+
+  .page-sub {
+    font-size: 14px;
+  }
+
+  .docs-layout,
+  .pg-layout,
+  .card-layout {
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .docs-side,
+  .pg-side {
+    position: static;
+    min-width: 0;
+    max-height: none;
+    overflow: visible;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding-bottom: 0;
+  }
+
+  .docs-group,
+  .pg-group {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .docs-side-link,
+  .pg-endpoint {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .docs-main,
+  .pg-main,
+  .endpoint,
+  .pg-panel,
+  .card-info {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .endpoint-path {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .endpoint-path code,
+  .pg-panel-head code {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .params {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .params thead,
+  .params tbody {
+    min-width: 480px;
+  }
+
+  .base-row {
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .base-row code {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .pg-panel {
+    padding: 16px;
+  }
+
+  .pg-panel-head {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .pg-param {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 5px;
+  }
+
+  .pg-param .input {
+    min-width: 0;
+  }
+
+  .pg-path {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .code-block,
+  .code-head {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .code-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .code-block pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .json {
+    overflow-wrap: anywhere;
+  }
+
+  .card-visual {
+    width: 100%;
+    max-width: min(100%, 340px);
+  }
+
+  .card-info h1 {
+    font-size: clamp(26px, 8vw, 34px);
+    overflow-wrap: anywhere;
+  }
+
+  .card-meta {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .card-meta > div,
+  .card-meta dd {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .card-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .card-actions > .btn {
+    justify-content: center;
+  }
+
+  .pager {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .pager .btn {
+    padding: 8px 12px;
+  }
+
+  .footer {
+    margin-top: 54px;
+    padding-bottom: calc(92px + env(safe-area-inset-bottom));
+  }
+
+  /* Turn the desktop header into a floating, glass-style mobile tab bar. */
+  .nav {
+    position: fixed;
+    top: auto;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    left: 50%;
+    z-index: 100;
+    width: calc(100% - 24px);
+    max-width: 420px;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 23px;
+    background: rgba(10, 17, 30, 0.76);
+    box-shadow:
+      0 12px 38px rgba(0, 0, 0, 0.36),
+      inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    -webkit-backdrop-filter: blur(24px) saturate(170%);
+    backdrop-filter: blur(24px) saturate(170%);
+  }
+
+  .nav-inner {
+    height: auto;
+    min-height: 66px;
+    padding: 6px 8px;
+    gap: 0;
+  }
+
+  .nav-brand,
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 3px;
+  }
+
+  .mobile-nav-link {
+    display: flex;
+    min-width: 0;
+    min-height: 52px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 2px;
+    border-radius: 16px;
+    color: var(--dim);
+    font-size: 10.5px;
+    font-weight: 600;
+    line-height: 1;
+    transition:
+      color 0.18s ease,
+      background 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .mobile-nav-link svg {
+    width: 19px;
+    height: 19px;
+    flex: none;
+    stroke: currentColor;
+  }
+
+  .mobile-nav-link.active {
+    color: var(--text);
+    background: linear-gradient(
+      145deg,
+      rgba(76, 194, 255, 0.16),
+      rgba(52, 211, 153, 0.12)
+    );
+    box-shadow: inset 0 0 0 1px rgba(76, 194, 255, 0.1);
+  }
+
+  .mobile-nav-link.active svg {
+    color: var(--mint);
+  }
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav-link {
+    transition: none;
+  }
+}
