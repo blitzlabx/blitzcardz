@@ -1,12 +1,13 @@
+"use client";
+
 import { rarityOf } from "@/lib/rarity";
+import CardImage from "./CardImage";
 
 export default function CardTile({ card }) {
   const r = rarityOf(card.tier);
   return (
     <a className="tile" href={`/card/${card.id}`}>
-      <span className="tile-frame">
-        <img src={card.url} alt={card.title} loading="lazy" />
-      </span>
+      <CardImage src={card.url} alt={card.title} className="tile-frame" />
       <span className="tile-meta">
         <span className="tile-name">{card.title}</span>
         <span className="tile-series">{card.series}</span>
