@@ -48,3 +48,15 @@ A fresh instance serves the bundled snapshot immediately. Trigger a live sync at
 
 1. Push this repo to GitHub
 2. Import it on Vercel — no environment variables required
+3. `vercel.json` schedules the hourly sync. Note: on the Hobby plan crons run once per day; change the schedule to `0 0 * * *` or upgrade to Pro for hourly
+
+## PWA
+
+- `public/manifest.webmanifest` — name, theme, icons, app shortcuts
+- `public/sw.js` — offline app shell + static caching; API traffic always hits the network
+- `public/icons/` — SVG mark plus 192/512, maskable and apple-touch PNGs
+- `public/thumbnail.png` — Open Graph / Twitter card image
+
+## Author
+
+Built by **Blitz**. MIT licensed.
