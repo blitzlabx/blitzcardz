@@ -1,11 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export default function NavigationProgress() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [visible, setVisible] = useState(false);
   const [complete, setComplete] = useState(false);
 
@@ -42,7 +41,7 @@ export default function NavigationProgress() {
       setComplete(false);
     }, 260);
     return () => clearTimeout(timer);
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <div className={`navigation-progress${visible ? " is-visible" : ""}${complete ? " is-complete" : ""}`} aria-hidden="true">
