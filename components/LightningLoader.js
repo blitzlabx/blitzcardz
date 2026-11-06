@@ -6,34 +6,44 @@ export default function LightningLoader({ className = "", label = "Loading cards
   const uid = useId().replace(/:/g, "");
   return (
     <span className={`lightning-loader ${className}`.trim()} role="status" aria-label={label}>
-      <svg viewBox="0 0 48 48" focusable="false" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" width="120" height="160" focusable="false" aria-hidden="true">
         <defs>
-          <linearGradient id={`${uid}-bolt-fill`} x1="9" y1="5" x2="38" y2="43" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="#a5f3fc" />
-            <stop offset="0.48" stopColor="#4cc2ff" />
-            <stop offset="1" stopColor="#34d399" />
+          <linearGradient id={`${uid}-glass`} x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#dffaff" stopOpacity=".34" />
+            <stop offset=".48" stopColor="#48cfff" stopOpacity=".16" />
+            <stop offset="1" stopColor="#1767ff" stopOpacity=".3" />
           </linearGradient>
-          <radialGradient id={`${uid}-core-glow`}>
-            <stop offset="0" stopColor="#4cc2ff" stopOpacity=".28" />
-            <stop offset="1" stopColor="#4cc2ff" stopOpacity="0" />
-          </radialGradient>
+          <linearGradient id={`${uid}-neon`} x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#e9ffff" />
+            <stop offset=".38" stopColor="#53e5ff" />
+            <stop offset=".72" stopColor="#258cff" />
+            <stop offset="1" stopColor="#a8f6ff" />
+          </linearGradient>
+          <filter id={`${uid}-glow`} x="-70%" y="-70%" width="240%" height="240%" colorInterpolationFilters="sRGB">
+            <feGaussianBlur stdDeviation="3.2" result="blur">
+              <animate attributeName="stdDeviation" values="3.2;7;3.2;3.2" keyTimes="0;.045;.16;1" dur="1.8s" repeatCount="indefinite" />
+            </feGaussianBlur>
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
         </defs>
-        <circle className="lightning-aura" cx="24" cy="24" r="22" fill={`url(#${uid}-core-glow)`} />
-        <circle className="lightning-orbit lightning-orbit-outer" cx="24" cy="24" r="19" />
-        <circle className="lightning-orbit lightning-orbit-inner" cx="24" cy="24" r="15" />
         <path
-          className="lightning-bolt"
-          d="M27.4 3.8 11.2 25.1h10.1l-1.1 19.1 16.6-25.3H26.4l1-15.1Z"
-          fill={`url(#${uid}-bolt-fill)`}
-        />
-        <path
-          className="lightning-bolt-highlight"
-          d="m27.4 3.8-7.1 20.1"
-          fill="none"
-          stroke="#e0fbff"
+          d="M 71 7 L 25 83 L 54 83 L 43 153 L 98 61 L 68 61 Z"
+          pathLength="1000"
+          fill={`url(#${uid}-glass)`}
+          stroke={`url(#${uid}-neon)`}
+          strokeWidth="4"
+          strokeLinejoin="round"
           strokeLinecap="round"
-          strokeWidth="1.5"
-        />
+          strokeDasharray="118 882"
+          filter={`url(#${uid}-glow)`}
+        >
+          <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="1.8s" repeatCount="indefinite" />
+          <animate attributeName="stroke-width" values="4;6.5;4;4" keyTimes="0;.045;.16;1" dur="1.8s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values=".92;1;.94;.92" keyTimes="0;.045;.16;1" dur="1.8s" repeatCount="indefinite" />
+        </path>
       </svg>
     </span>
   );
