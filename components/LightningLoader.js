@@ -30,6 +30,7 @@ export default function LightningLoader({ className = "", label = "Loading cards
           </filter>
         </defs>
         <path
+          className="lightning-trace"
           d="M 71 7 L 25 83 L 54 83 L 43 153 L 98 61 L 68 61 Z"
           pathLength="1000"
           fill={`url(#${uid}-glass)`}
