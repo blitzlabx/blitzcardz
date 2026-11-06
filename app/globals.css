@@ -1646,6 +1646,12 @@ select.input {
   display: none;
 }
 
+@media (max-width: 640px) {
+  .mobile-nav {
+    display: grid;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mobile-nav-link {
     transition: none;
