@@ -15,7 +15,7 @@ export default function CardImage({
   useEffect(() => {
     setLoaded(false);
     const image = imageRef.current;
-    if (image?.complete) setLoaded(true);
+    if (image?.complete && image.naturalWidth > 0) setLoaded(true);
   }, [src]);
 
   return (
@@ -32,6 +32,7 @@ export default function CardImage({
         src={src}
         alt={alt}
         loading={loading}
+        fetchPriority={loading === "eager" ? "high" : "auto"}
         decoding="async"
         onLoad={() => setLoaded(true)}
         onError={() => setLoaded(true)}
