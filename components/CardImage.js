@@ -13,6 +13,7 @@ export default function CardImage({
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    setLoaded(false);
     const image = imageRef.current;
     if (image?.complete) setLoaded(true);
   }, [src]);
