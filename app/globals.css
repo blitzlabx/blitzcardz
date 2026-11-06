@@ -1680,12 +1680,14 @@ select.input {
   inset: 0;
   z-index: 2;
   display: grid;
+  width: 100%;
+  height: 100%;
   place-items: center;
   pointer-events: none;
   background: radial-gradient(ellipse at center, rgba(36, 145, 255, .12), transparent 68%);
 }
 
-.card-image-loader .lightning-loader {
+.card-image-loader svg {
   width: 92px;
   height: 123px;
 }
@@ -1703,13 +1705,14 @@ select.input {
   height: 160px;
 }
 
-.card-frame .card-image-loader .lightning-loader {
+.card-frame .card-image-loader svg {
   width: 112px;
   height: 149px;
 }
 
 .card-image-shell {
   position: relative;
+  display: block;
   isolation: isolate;
 }
 
